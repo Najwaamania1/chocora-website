@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocora | Luxury Chocolate Boutique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <a class="logo" href="#home">CHOCORA<span>.</span></a>
+
+      <div class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#products">Collection</a>
+        <a href="#about">Tentang</a>
+        <a href="#reviews">Ulasan</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <button class="cart-button" onclick="showCart()">
+        Keranjang (<span id="cart-count">0</span>)
+      </button>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow">A LITTLE BOX OF HAPPINESS</p>
+      <h1>Luxury Chocolate,<br><em>Made With Love.</em></h1>
+      <p>Temukan cokelat premium untuk momen istimewa.</p>
+      <a href="#products" class="main-button">Explore Collection</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- KOLEKSI PRODUK -->
+    <section class="intro" id="products">
+      <p class="eyebrow">THE CHOCORA COLLECTION</p>
+      <h2>Something Sweet for You</h2>
+      <p>15 pilihan cokelat premium untuk setiap suasana.</p>
+    </section>
+
+    <section class="product-grid" id="product-list"></section>
+
+    <!-- KERANJANG DAN CHECKOUT -->
+    <section class="checkout-section" id="checkout">
+      <div class="checkout-heading">
+        <p class="eyebrow">YOUR SWEET SELECTION</p>
+        <h2>Keranjang & Checkout</h2>
+      </div>
+
+      <div id="cart-items"></div>
+
+      <div class="cart-total">
+        <span>Total Belanja</span>
+        <strong id="cart-total">Rp0</strong>
+      </div>
+
+      <form id="checkout-form">
+        <h3>Informasi Pesanan</h3>
+
+        <label for="customer-name">Nama pembeli</label>
+        <input id="customer-name" type="text"
+          placeholder="Masukkan nama" required>
+
+        <label for="customer-address">Alamat pengiriman</label>
+        <textarea id="customer-address"
+          placeholder="Masukkan alamat untuk simulasi"
+          required></textarea>
+
+        <label for="payment">Metode pembayaran</label>
+        <select id="payment" required>
+          <option value="">Pilih pembayaran</option>
+          <option>Transfer bank (simulasi)</option>
+          <option>E-wallet (simulasi)</option>
+          <option>COD (simulasi)</option>
+        </select>
+
+        <label for="delivery">Metode pengiriman</label>
+        <select id="delivery" required>
+          <option value="">Pilih pengiriman</option>
+          <option>Reguler</option>
+          <option>Express</option>
+          <option>Same Day</option>
+        </select>
+
+        <button type="submit" class="main-button full-button">
+          Buat Pesanan
+        </button>
+
+        <p class="notice">
+          Checkout ini hanya simulasi untuk tugas sekolah.
+          Tidak ada pembayaran atau pengiriman sungguhan.
+        </p>
+      </form>
+
+      <div id="order-result" aria-live="polite"></div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section class="about-section" id="about">
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1548907040-4d42faa9e4f2?auto=format&fit=crop&w=1000&q=85"
+          alt="Cokelat premium Chocora"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://placehold.co/800x600/f0e5da/40251e?text=Chocora';"
+        >
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>A Sweet Story Behind Every Bite</h2>
+        <p>
+          Chocora adalah konsep toko cokelat premium yang
+          menghadirkan berbagai pilihan cokelat untuk menemani
+          momen istimewa.
+        </p>
+        <p>
+          Kami mengutamakan pilihan produk yang beragam,
+          tampilan elegan, dan pengalaman berbelanja yang mudah.
+          Mulai dari hadiah untuk orang tersayang hingga camilan
+          untuk diri sendiri, Chocora ingin menghadirkan
+          kebahagiaan melalui sesuatu yang manis.
+        </p>
+        <a href="#products" class="main-button">Discover Our Products</a>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="benefits-section">
+      <div class="section-heading">
+        <p class="eyebrow">WHY CHOCORA?</p>
+        <h2>Made for Sweet Moments</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <span>✦</span>
+          <h3>Premium Selection</h3>
+          <p>Berbagai pilihan produk cokelat dengan konsep premium.</p>
+        </article>
+
+        <article class="benefit-card">
+          <span>♡</span>
+          <h3>Beautiful Packaging</h3>
+          <p>Konsep kemasan elegan untuk hadiah dan momen spesial.</p>
+        </article>
+
+        <article class="benefit-card">
+          <span>✧</span>
+          <h3>Easy Shopping</h3>
+          <p>Pengunjung dapat memilih produk dan mencoba checkout dengan mudah.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ULASAN PELANGGAN -->
+    
+<!-- ULASAN PELANGGAN -->
+<section class="reviews-section" id="reviews">
+  <div class="section-heading">
+    <p class="eyebrow">YOUR SWEET STORIES</p>
+    <h2>Customer Reviews</h2>
+    <p class="section-description">
+      Share your sweet experience with Chocora!
+    </p>
+  </div>
+
+  <div class="review-form">
+    <h3>Write Your Review</h3>
+
+    <form id="reviewForm">
+      <input
+        type="text"
+        id="reviewName"
+        placeholder="Your name"
+        required
+      >
+
+      <select id="reviewRating" required>
+        <option value="5">★★★★★ - Excellent</option>
+        <option value="4">★★★★☆ - Very Good</option>
+        <option value="3">★★★☆☆ - Good</option>
+        <option value="2">★★☆☆☆ - Fair</option>
+        <option value="1">★☆☆☆☆ - Poor</option>
+      </select>
+
+      <textarea
+        id="reviewMessage"
+        placeholder="Write your review here..."
+        required
+      ></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+
+  <div class="reviews-grid" id="reviewsGrid">
+    <p id="emptyReviews">Be the first to review Chocora!</p>
+  </div>
+</section>
+
+
+    <!-- KONTAK -->
+    <section class="contact-section" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
+        <h2>Get in Touch</h2>
+        <p class="section-description">
+          Ada pertanyaan tentang koleksi Chocora?
+          Lihat informasi kontak contoh berikut.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card">
+          <span class="contact-icon">✉</span>
+          <h3>Email</h3>
+          <p>Untuk pertanyaan seputar produk.</p>
+          <a href="mailto:hello@chocora.example">
+            hello@chocora.xoxo
+          </a>
+        </article>
+
+        <article class="contact-card">
+          <span class="contact-icon">☎</span>
+          <h3>Customer Service</h3>
+          <p>Informasi dan bantuan pelanggan.</p>
+          <span>+62 0812 3456 789</span>
+        </article>
+
+        <article class="contact-card">
+          <span class="contact-icon">◎</span>
+          <h3>Social Media</h3>
+          <p>Inspirasi cokelat dan koleksi terbaru.</p>
+          <span>@chocoraofficial</span>
+        </article>
+      </div>
+
+      <p class="contact-note">
+        Informasi kontak di atas merupakan contoh untuk proyek sekolah,
+        bukan layanan pelanggan yang aktif.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="section-heading">
+        <p class="eyebrow">NEED HELP?</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <details>
+        <summary>Bagaimana cara membeli produk Chocora?</summary>
+        <p>Pilih produk, masukkan ke keranjang, lalu isi formulir checkout.</p>
+      </details>
+
+      <details>
+        <summary>Apakah harus login terlebih dahulu?</summary>
+        <p>Tidak. Website ini dapat digunakan tanpa membuat akun.</p>
+      </details>
+
+      <details>
+        <summary>Apakah pembayaran dilakukan sungguhan?</summary>
+        <p>Tidak. Pilihan pembayaran hanya untuk simulasi tugas sekolah.</p>
+      </details>
+
+      <details>
+        <summary>Apakah pesanan benar-benar dikirim?</summary>
+        <p>Tidak. Website ini tidak memproses pengiriman sungguhan.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a class="logo footer-logo" href="#home">CHOCORA<span>.</span></a>
+    <p class="footer-tagline">
+      A little sweetness makes every moment special.
+    </p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Chocora — School Project
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
